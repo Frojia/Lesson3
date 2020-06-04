@@ -1,17 +1,17 @@
 public class TaskNine {
-    public static String dotEnd(String string) {
-        if (string.isEmpty()){
-            return string + ".";
+    public static String stringEnds (String str){
+        if (str.endsWith(".")){
+            return str;
         }
-        if (string.substring(string.length() - 1).equals(".")) {
-            return string;
-        } else {
-            return string + ".";
+        else {
+            StringBuilder result = new StringBuilder();
+            return result.append(str).append(".").toString();
         }
     }
-
     public static void main(String[] args) {
-        System.out.println(dotEnd("Basic"));
-
+        String withDot = "With dot.";
+        String withOutDot = "Without dot";
+        System.out.println("String ends with \".\" -> " + stringEnds(withDot));
+        System.out.println("String ends without \".\" -> " + stringEnds(withOutDot));
     }
 }
